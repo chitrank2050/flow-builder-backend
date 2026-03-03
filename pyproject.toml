@@ -1,7 +1,7 @@
 [project]
 name = "flow-builder-backend"
 version = "0.1.0"
-description = "⚡︎ Backend for Flow Builder."
+description = "⚡︎ FastAPI based backend for Flow Builder."
 readme = "README.md"
 requires-python = ">=3.12"
 authors = [{ name = "Chitrank Agnihoti", email = "chitrank2050@gmail.com" }]
