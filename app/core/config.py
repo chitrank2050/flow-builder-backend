@@ -25,6 +25,7 @@ class _Settings(BaseSettings):
     APP_NAME: str = _meta["Name"].replace("-", " ").title()
     APP_VERSION: str = _meta["Version"]
     APP_DESCRIPTION: str = decode_meta(_meta["Summary"])
+    ALLOWED_ORIGINS: list[str] = ["http://localhost:5173", "http://127.0.0.1:5173"]
 
     # ----------------------------------------------------------------
     # ⚙️  Environment — resolved at class-definition time so that

@@ -6,8 +6,10 @@ from app.services import is_dag
 router = APIRouter()
 
 
-@router.get(
-    "/pipelines/parse", response_model=PipelineResponse, name="Parse the pipeline"
+@router.post(
+    "/pipelines/parse",
+    response_model=PipelineResponse,
+    name="Parse the pipeline",
 )
 def parse_pipeline(pipeline: PipelineRequest) -> PipelineResponse:
     return PipelineResponse(

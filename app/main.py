@@ -4,6 +4,7 @@ import sys
 
 import uvicorn
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.v1.routes import router
 from app.core import lifespan, log, settings
@@ -19,6 +20,13 @@ app = FastAPI(
 
 # Include API routers
 app.include_router(router)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=settings.ALLOWED_ORIGINS,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 def main():
