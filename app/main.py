@@ -5,6 +5,7 @@ import sys
 import uvicorn
 from fastapi import FastAPI
 
+from app.api.v1.routes import router
 from app.core import lifespan, log, settings
 
 # Initialize the FastAPI
@@ -15,6 +16,9 @@ app = FastAPI(
     debug=settings.DEBUG,
     lifespan=lifespan,
 )
+
+# Include API routers
+app.include_router(router)
 
 
 def main():
